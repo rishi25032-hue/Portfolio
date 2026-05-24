@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishi Sharma | Founder's Office & Chief of Staff Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -29,8 +30,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; color: #1a1a1a; }
         .serif-title { font-family: 'Playfair Display', serif; }
+        .chart-container { position: relative; width: 100%; height: 160px; }
     </style>
 </head>
 <body class="antialiased selection:bg-oxford-100 selection:text-oxford-900">
@@ -47,50 +49,81 @@
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-24">
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
 
-        <section id="about" class="pt-8 max-w-3xl">
-            <p class="text-xs font-semibold tracking-widest uppercase text-gold mb-3">Founder's Office & Chief of Staff Candidate</p>
-            <h1 class="serif-title text-4xl sm:text-5xl font-normal tracking-tight text-oxford-900 mb-6 leading-tight">
-                Driving revenue growth, cross-functional execution, and systems-led efficiency.
-            </h1>
-            <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                A high-agency management professional with a proven track record of building and leading revenue teams, redesigning conversion funnels, and deploying AI automation frameworks[cite: 3, 5]. Experienced in handling zero-to-one mandates from strategy to analytical execution[cite: 5, 32].
-            </p>
-            <div class="flex flex-wrap gap-4 text-sm font-medium">
-                <a href="mailto:rishi.25032@ssb.scaler.com" class="bg-oxford-900 text-white px-5 py-2.5 hover:bg-oxford-800 transition-colors rounded-none">
-                    Contact Executive
-                </a>
-                <a href="https://www.linkedin.com/in/rishi-sharma-2250/" target="_blank" rel="noopener noreferrer" class="border border-gray-300 px-5 py-2.5 hover:bg-gray-50 transition-colors rounded-none flex items-center gap-2">
-                    View LinkedIn Profile
-                </a>
+        <section id="about" class="pt-8 flex flex-col md:flex-row gap-8 items-center md:items-start justify-between">
+            <div class="max-w-2xl space-y-4 order-2 md:order-1">
+                <p class="text-xs font-semibold tracking-widest uppercase text-gold">Founder's Office & Chief of Staff Candidate</p>
+                <h1 class="serif-title text-4xl sm:text-5xl font-normal tracking-tight text-oxford-900 leading-tight">
+                    Driving revenue growth, cross-functional execution, and systems-led efficiency.
+                </h1>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    A high-agency management professional with a proven track record of building and leading revenue teams, redesigning conversion funnels, and deploying AI automation frameworks. Experienced in handling zero-to-one mandates from strategy to analytical execution.
+                </p>
+                <div class="flex flex-wrap gap-4 text-sm font-medium pt-2">
+                    <a href="mailto:rishi.25032@ssb.scaler.com" class="bg-oxford-900 text-white px-5 py-2.5 hover:bg-oxford-800 transition-colors">
+                        Contact Executive
+                    </a>
+                    <a href="https://www.linkedin.com/in/rishi-sharma-2250/" target="_blank" rel="noopener noreferrer" class="border border-gray-300 px-5 py-2.5 hover:bg-gray-50 transition-colors flex items-center gap-2">
+                        View LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+            
+            <div class="order-1 md:order-2 flex-shrink-0">
+                <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gray-100">
+                    <img src="image_558b61.png" alt="Rishi Sharma Headshot" class="w-full h-full object-cover object-top scale-105">
+                </div>
             </div>
         </section>
 
         <hr class="border-gray-200" />
 
-        <section id="impact" class="space-y-8">
+        <section id="impact" class="space-y-10">
             <div>
                 <h2 class="serif-title text-2xl text-oxford-900 font-semibold">The Numbers at a Glance</h2>
-                <p class="text-sm text-gray-500 mt-1">Quantifiable revenue and operational outcomes delivered.</p>
+                <p class="text-sm text-gray-500 mt-1">Quantifiable revenue growth and trajectory metrics generated dynamically.</p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="border-l-2 border-gold pl-4 py-2">
-                    <p class="text-3xl font-light text-oxford-900 serif-title font-semibold">$300K</p>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Monthly Team Output [cite: 4, 8]</p>
+                <div class="border-l-2 border-gold pl-4 py-1">
+                    <p class="text-3xl font-semibold text-oxford-900 serif-title">$300K</p>
+                    <p class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">Monthly Revenue Output</p>
                 </div>
-                <div class="border-l-2 border-gold pl-4 py-2">
-                    <p class="text-3xl font-light text-oxford-900 serif-title font-semibold">₹35 Cr+</p>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Portfolio Facilitated [cite: 22]</p>
+                <div class="border-l-2 border-gold pl-4 py-1">
+                    <p class="text-3xl font-semibold text-oxford-900 serif-title">₹35 Cr+</p>
+                    <p class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">Sanctioned Portfolio</p>
                 </div>
-                <div class="border-l-2 border-gold pl-4 py-2">
-                    <p class="text-3xl font-light text-oxford-900 serif-title font-semibold">2x</p>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">Promoted in 18 Mos [cite: 3, 37]</p>
+                <div class="border-l-2 border-gold pl-4 py-1">
+                    <p class="text-3xl font-semibold text-oxford-900 serif-title">2x</p>
+                    <p class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">Promoted inside 18 Mos</p>
                 </div>
-                <div class="border-l-2 border-gold pl-4 py-2">
-                    <p class="text-3xl font-light text-oxford-900 serif-title font-semibold">1,000+</p>
-                    <p class="text-xs uppercase tracking-wider text-gray-500 mt-1">D2C Unit Sales Scaled [cite: 32]</p>
+                <div class="border-l-2 border-gold pl-4 py-1">
+                    <p class="text-3xl font-semibold text-oxford-900 serif-title">1,000+</p>
+                    <p class="text-[11px] uppercase tracking-wider text-gray-500 mt-1">D2C Bootstrapped Sales</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+                <div class="bg-white p-5 border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-gray-700 block mb-3 uppercase tracking-wider">Revenue Team Output ($ Volume)</span>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-5 border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-gray-700 block mb-3 uppercase tracking-wider">₹35 Cr Loan Distribution Matrix</span>
+                    <div class="chart-container">
+                        <canvas id="portfolioChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <span class="text-xs font-semibold text-gray-700 block mb-3 uppercase tracking-wider">Corporate Trajectory Lift</span>
+                    <div class="chart-container">
+                        <canvas id="trajectoryChart"></canvas>
+                    </div>
                 </div>
             </div>
         </section>
@@ -103,92 +136,118 @@
                 <p class="text-sm text-gray-500 mt-1">Data-driven frameworks and go-to-market mechanics solved for industry leaders.</p>
             </div>
 
-            <div class="space-y-12">
-                <div class="bg-gray-50 p-6 md:p-8 border border-gray-100 rounded-none space-y-4">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline">
+            <div class="space-y-10">
+                <div class="bg-white p-6 md:p-8 border border-gray-200 shadow-sm space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline gap-2">
                         <span class="text-xs font-semibold tracking-widest text-gold uppercase">Market Research & Monetization Blueprints</span>
-                        <span class="text-xs font-mono text-gray-400">Podium Finish | Practo Founder Challenge [cite: 31]</span>
+                        <span class="text-xs font-mono text-gray-400 font-medium">Podium Finish | Practo Founder Challenge</span>
                     </div>
                     <h3 class="serif-title text-xl text-oxford-900 font-semibold">Reimagining Trust & Continuity to Stop Funnel Leakage (Practo)</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        Conducted an extensive mixed-methods market research playbook to figure out why digital healthcare booking loops collapse in India[cite: 214]. Spearheaded a framework built on primary and secondary customer data to scale transaction drop-offs into sticky, lifelong retention hooks[cite: 198, 214].
+                        Conducted an extensive mixed-methods market research playbook to figure out why digital healthcare booking loops collapse in India. Spearheaded a framework built on primary and secondary customer data to scale transaction drop-offs into sticky, lifelong retention hooks.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs pt-2">
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Statistical Toolkit</strong>
-                            Applied Factor Analysis (reducing 22 attitudes to 4 perception barriers), K-Means clustering, and Multiple Linear Regression to model future recommendation intent ($R^2 = 0.62$)[cite: 252, 253, 254, 622].
+                            Applied Factor Analysis (reducing 22 attitudes to 4 perception barriers), K-Means clustering, and Multiple Linear Regression to model future recommendation intent ($R^2 = 0.62$).
                         </div>
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Key Insights Discovered</strong>
-                            75% of users saw a doctor offline 1-5 times last year—meaning value leaks heavily during physical handoffs[cite: 312, 313]. Trust was identified as the entry wall ($\beta = +0.612$)[cite: 549, 643].
+                            75% of users saw a doctor offline 1-5 times last year—meaning value leaks heavily during physical handoffs. Trust was identified as the entry wall ($\beta = +0.612$).
                         </div>
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Growth Levers Formulated</strong>
-                            Designed the *Post-Consult Smart Cart* with doctor validation to double post-consult AOV [cite: 939, 971, 979], *Practo Bridge* ($79-129/mo NRI Care) [cite: 984, 988], and *Surgery Sahayak* health concierge layer[cite: 995, 996].
+                            Designed the *Post-Consult Smart Cart* with doctor validation to double post-consult AOV, *Practo Bridge* ($79-129/mo NRI Care), and *Surgery Sahayak* health concierge layer.
                         </div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://drive.google.com/file/d/1F2RzmASimoE8moSKHpesGfThJJPWtASk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-oxford-900 hover:text-gold transition-colors gap-1 uppercase tracking-wider">
+                            <span>Open Detailed Research Deck & Case Study</span> &rarr;
+                        </a>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-6 md:p-8 border border-gray-100 rounded-none space-y-4">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline">
+                <div class="bg-white p-6 md:p-8 border border-gray-200 shadow-sm space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline gap-2">
                         <span class="text-xs font-semibold tracking-widest text-gold uppercase">Quick Commerce Growth Strategy</span>
-                        <span class="text-xs font-mono text-gray-400">Advanced Consumer Behaviour Modeling [cite: 1192]</span>
+                        <span class="text-xs font-mono text-gray-400 font-medium">Advanced Consumer Behaviour Modeling</span>
                     </div>
                     <h3 class="serif-title text-xl text-oxford-900 font-semibold">Elevating Average Order Value (AOV) via Frictionless Micro-Warehousing (Blinkit)</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        Analyzed the structural shift from a 3P marketplace model to a high-margin 1P owned-inventory pivot[cite: 1205, 1206, 2107]. Mapped customer decision psychology against competitors like Zepto and Swiggy Instamart to break through baseline delivery unit economics[cite: 1242, 1327].
+                        An in-depth analysis of the structural shift from a 3P marketplace model to a high-margin 1P owned-inventory pivot. Mapped customer decision psychology against competitors like Zepto and Swiggy Instamart to break through baseline delivery unit economics.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs pt-2">
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Behavioral Segmentation</strong>
-                            Ran Chi-Square tests ($p < .001$) linking professional status to order spending scale[cite: 1822, 1823, 1824]. Isolated Cluster 2 ("Instant Gratification Urban Consumers") as the highest retention asset for high-frequency algorithmic nudging[cite: 2000, 2001, 2009].
+                            Ran Chi-Square tests ($p < .001$) linking professional status to order spending scale. Isolated Cluster 2 ("Convenience-Driven Impulse Digital Consumers") as the highest retention asset for high-frequency algorithmic nudging.
                         </div>
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Strategic Interventions</strong>
-                            Drafted the *Silent Private Cart* framework to overcome retail counter social anxiety for high-margin wellness, cosmetics, and luxury lifestyle purchases[cite: 1269, 2121, 2126, 2127].
+                            Drafted the *Silent Private Cart* framework to overcome retail counter social anxiety for high-margin wellness, cosmetics, and luxury lifestyle purchases.
                         </div>
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Unit Economic Breakeven</strong>
-                            Modeled contribution margin metrics tracking local delivery parameters showing how lifting orders above ₹700 helps bypass fixed log-costs[cite: 1221, 1234].
+                            Modeled contribution margin metrics tracking local delivery parameters showing how lifting orders above ₹700 helps bypass fixed log-costs.
                         </div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://drive.google.com/file/d/1F2RzmASimoE8moSKHpesGfThJJPWtASk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-oxford-900 hover:text-gold transition-colors gap-1 uppercase tracking-wider">
+                            <span>Open Detailed Blinkit Operations Report</span> &rarr;
+                        </a>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-6 md:p-8 border border-gray-100 rounded-none space-y-4">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline">
+                <div class="bg-white p-6 md:p-8 border border-gray-200 shadow-sm space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-baseline gap-2">
                         <span class="text-xs font-semibold tracking-widest text-gold uppercase">Corporate Strategy & Financial Defense</span>
-                        <span class="text-xs font-mono text-gray-400">Retail & SME Commercial Analysis [cite: 2139]</span>
+                        <span class="text-xs font-mono text-gray-400 font-medium">Retail & SME Commercial Analysis</span>
                     </div>
                     <h3 class="serif-title text-xl text-oxford-900 font-semibold">Defending Fee-Based Revenue Streams Against Digital Ecosystem Disruption (HDFC Bank)</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        Conducted an industry-wide analysis of India's retail banking margins[cite: 2150]. Evaluated HDFC Bank's 28.46% performance matrix against competitors (Kotak, ICICI, SBI) and mapped risk avenues introduced by third-party fintech giants[cite: 2173, 2174, 2175, 2263].
+                        Evaluated industry-wide private vs. public retail banking margins. Formulated defensive roadmaps to safeguard HDFC Bank’s 28.46% performance metrics from open-banking fragmentation threats.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-2">
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Vulnerability Analysis</strong>
-                            Determined that rapid unbundling of payments (UPI) and standard high-volume processing lines threaten core corporate margins, moving them toward basic commoditized lender baselines[cite: 2261, 2263, 2265, 2270].
+                            Determined that rapid unbundling of payments (UPI) and standard high-volume processing lines threaten core corporate margins, moving them toward basic commoditized lender baselines.
                         </div>
-                        <div class="bg-white p-3 border border-gray-200">
+                        <div class="bg-gray-50 p-3 border border-gray-200">
                             <strong class="text-oxford-900 block mb-1">Embedded Finance Roadmap</strong>
-                            Designed an implementation roadmap for an open API Embedded Finance platform[cite: 2274, 2284]. Recommended a strategic investment of ₹2,000-3,000 Cr to launch a Banking-as-a-Service (BaaS) asset model[cite: 2274, 2278].
+                            Designs an implementation roadmap for an open API Embedded Finance platform. Recommends a strategic investment of ₹2,000-3,000 Cr to launch a Banking-as-a-Service (BaaS) asset model.
                         </div>
+                    </div>
+                    <div class="pt-2">
+                        <a href="https://drive.google.com/file/d/1F2RzmASimoE8moSKHpesGfThJJPWtASk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-oxford-900 hover:text-gold transition-colors gap-1 uppercase tracking-wider">
+                            <span>Open HDFC Strategic Advisory Briefing</span> &rarr;
+                        </a>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 border border-gray-100 rounded-none space-y-3">
-                        <span class="text-xs font-mono text-gray-400">Runner-Up | Quenzy GTM Challenge [cite: 28]</span>
-                        <h4 class="serif-title text-lg text-oxford-900 font-semibold">Quenzy Functional Beverage GTM Strategy</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            Engineered a multi-layered market entry plan for a prebiotic soda brand, transitioning its price index from ₹90 to ₹80 to clear trial hurdles[cite: 2319, 2320, 2464]. Identified 3 main customer personas and mapped hyper-local campaigns across tech parks, gyms, and quick commerce platforms[cite: 2526, 2527, 2770, 2780, 2791].
-                        </p>
+                    <div class="bg-white p-6 border border-gray-200 shadow-sm flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-xs font-mono text-gray-400 font-medium">Runner-Up | Quenzy GTM Challenge</span>
+                            <h4 class="serif-title text-lg text-oxford-900 font-semibold">Quenzy Functional Beverage GTM Strategy</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Engineered a multi-layered market entry plan for a prebiotic soda brand, transitioning its price index from ₹90 to ₹80 to clear trial hurdles. Identified 3 main customer personas and mapped campaigns across quick commerce channels.
+                            </p>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1F2RzmASimoE8moSKHpesGfThJJPWtASk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-oxford-900 hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                            View Go-To-Market Plan &rarr;
+                        </a>
                     </div>
-                    <div class="bg-gray-50 p-6 border border-gray-100 rounded-none space-y-3">
-                        <span class="text-xs font-mono text-gray-400">Runner-Up | SSB AI Hackathon [cite: 29]</span>
-                        <h4 class="serif-title text-lg text-oxford-900 font-semibold">2AM Buddy: AI-Native Voice Companion</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">
-                            Designed and coded *2AM Buddy*, an automated mental wellness conversational prototype utilizing N8N workflow automations, vector search layers, and custom prompt routing logic to handle immediate emotional support triggers[cite: 30, 3179].
-                        </p>
+                    
+                    <div class="bg-white p-6 border border-gray-200 shadow-sm flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-xs font-mono text-gray-400 font-medium">Runner-Up | SSB AI Hackathon</span>
+                            <h4 class="serif-title text-lg text-oxford-900 font-semibold">2AM Buddy: AI-Native Voice Companion</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Designed and coded *2AM Buddy*, an automated mental wellness conversational prototype utilizing N8N workflow automations, vector search layers, and custom prompt routing logic to handle immediate emotional support triggers.
+                            </p>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1F2RzmASimoE8moSKHpesGfThJJPWtASk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-oxford-900 hover:text-gold uppercase tracking-wider inline-flex items-center gap-1">
+                            View Architecture Deck &rarr;
+                        </a>
                     </div>
                 </div>
             </div>
@@ -206,16 +265,16 @@
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline border-b border-gray-100 pb-2">
                     <div>
                         <h3 class="text-lg font-medium text-oxford-900">Manager (Formerly TL & CSM)</h3>
-                        <p class="text-sm text-gray-600">98th Percentile Learning Solutions <span class="text-gray-400">| US-based K-12 ($1.2Bn Valuation)</span> [cite: 7]</p>
+                        <p class="text-sm text-gray-600">98th Percentile Learning Solutions <span class="text-gray-400">| US-based K-12 ($1.2Bn Valuation)</span></p>
                     </div>
-                    <p class="text-sm text-gray-500 italic mt-1 sm:mt-0">Aug 2023 — June 2025 [cite: 7, 16]</p>
+                    <p class="text-sm text-gray-500 italic mt-1 sm:mt-0">Aug 2023 — June 2025</p>
                 </div>
-                <p class="text-xs text-gold uppercase font-semibold tracking-wider">Promoted twice in 18 months due to performance [cite: 3, 37]</p>
+                <p class="text-xs text-gold uppercase font-semibold tracking-wider">Promoted twice in 18 months due to performance</p>
                 <ul class="space-y-2.5 text-sm text-gray-600 list-disc pl-4">
-                    <li><strong class="text-gray-900">Revenue Leadership:</strong> Managed a 10-person revenue team executing $300K in monthly sales volume (~$3.6M ARR)[cite: 4, 8].</li>
-                    <li><strong class="text-gray-900">Conversion Growth:</strong> Redesigned onboarding and pricing structures to lift trial-to-paid conversions from 8% to 10%, adding $42,000 in monthly incremental recurring revenue[cite: 9].</li>
-                    <li><strong class="text-gray-900">Systems & Infrastructure:</strong> Deployed a centralized analytical layer to track conversion funnels, employee productivity metrics, and live OKRs to quicken executive decision-making[cite: 11, 41].</li>
-                    <li><strong class="text-gray-900">Retention Ops:</strong> Rebuilt customer touchpoint architectures to push monthly churn down from 22% to 17% [cite: 13]; automated CRM workflows inside HubSpot/Zoho to shave off manual team drag[cite: 14].</li>
+                    <li><strong class="text-gray-900">Revenue Leadership:</strong> Managed a 10-person revenue team executing $300K in monthly sales volume (~$3.6M ARR).</li>
+                    <li><strong class="text-gray-900">Conversion Growth:</strong> Redesigned onboarding and pricing structures to lift trial-to-paid conversions from 8% to 10%, adding $42,000 in monthly incremental recurring revenue.</li>
+                    <li><strong class="text-gray-900">Systems & Infrastructure:</strong> Deployed a centralized analytical layer to track conversion funnels, employee productivity metrics, and live OKRs to quicken executive decision-making.</li>
+                    <li><strong class="text-gray-900">Retention Ops:</strong> Rebuilt customer touchpoint architectures to push monthly churn down from 22% to 17%; automated CRM workflows inside HubSpot/Zoho to shave off manual team drag.</li>
                 </ul>
             </div>
 
@@ -223,14 +282,14 @@
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline border-b border-gray-100 pb-2">
                     <div>
                         <h3 class="text-lg font-medium text-oxford-900">Financial Operations Associate</h3>
-                        <p class="text-sm text-gray-600">WeMakeScholars Ed Tech Pvt Ltd [cite: 19, 20]</p>
+                        <p class="text-sm text-gray-600">WeMakeScholars Ed Tech Pvt Ltd</p>
                     </div>
-                    <p class="text-sm text-gray-500 italic mt-1 sm:mt-0">Aug 2022 — July 2023 [cite: 21]</p>
+                    <p class="text-sm text-gray-500 italic mt-1 sm:mt-0">Aug 2022 — July 2023</p>
                 </div>
                 <ul class="space-y-2.5 text-sm text-gray-600 list-disc pl-4">
-                    <li><strong class="text-gray-900">Portfolio Management:</strong> Facilitated over 140+ high-value education loans, executing a total sanctioned portfolio value of ₹35 Crores+[cite: 22].</li>
-                    <li><strong class="text-gray-900">Top Honors:</strong> Conferred with the <span class="font-medium text-oxford-900">Best Salesperson of the Year (2023)</span> award in a highly competitive pool of 150+ associates[cite: 23, 39].</li>
-                    <li><strong class="text-gray-900">Pipeline Coordination:</strong> Managed cross-institutional compliance pipelines, inbound intent optimization, documentation flows, and complex banking relationship frameworks[cite: 24].</li>
+                    <li><strong class="text-gray-900">Portfolio Management:</strong> Facilitated over 140+ high-value education loans, executing a total sanctioned portfolio value of ₹35 Crores+.</li>
+                    <li><strong class="text-gray-900">Top Honors:</strong> Conferred with the <span class="font-medium text-oxford-900">Best Salesperson of the Year (2023)</span> award in a highly competitive pool of 150+ associates.</li>
+                    <li><strong class="text-gray-900">Pipeline Coordination:</strong> Managed cross-institutional compliance pipelines, inbound intent optimization, documentation flows, and complex banking relationship frameworks.</li>
                 </ul>
             </div>
         </section>
@@ -247,5 +306,53 @@
         </div>
     </footer>
 
+    <script>
+        // 1. Revenue Scale Line Chart
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'line',
+            data: {
+                labels: ['CSM Entry', 'Team Lead', 'Manager Launch'],
+                datasets: [{
+                    label: 'Team Output ($ ARR)',
+                    data: [80000, 190000, 300000],
+                    borderColor: '#002147',
+                    backgroundColor: 'rgba(0, 33, 71, 0.05)',
+                    borderWidth: 2,
+                    tension: 0.2,
+                    fill: true
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+
+        // 2. Portfolio Structure Doughnut Chart
+        new Chart(document.getElementById('portfolioChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Sanctioned Portfolio', 'Pending Pipeline'],
+                datasets: [{
+                    data: [35, 12],
+                    backgroundColor: ['#002147', '#c5a059'],
+                    borderWidth: 1
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 9 } } } } }
+        });
+
+        // 3. Promotion Speed Bar Chart
+        new Chart(document.getElementById('trajectoryChart'), {
+            type: 'bar',
+            data: {
+                labels: ['2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Org Level Lift',
+                    data: [1, 2, 3],
+                    backgroundColor: '#002147',
+                    barThickness: 16
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+    </script>
 </body>
 </html>
